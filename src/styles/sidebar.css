@@ -13,7 +13,7 @@
 }
 
 .profile-container {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .sidebar-link {
@@ -21,7 +21,7 @@
   align-items: center;
   color: white;
   text-decoration: none;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-family: Poppins;
   font-size: 16px;
   font-weight: 400;
@@ -44,4 +44,10 @@
 
 .sidebar-icon {
   margin-right: 10px;
+}
+
+.lastimg {
+  margin: 30px;
+  width: 140px;
+  height: 100px;
 }

@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import "../styles/sidebar.css";
 import { Profile } from "./profile.jsx";
-
+import myImage from "../image/jassan.png";
 const Sidebar = () => {
   const [activeLink, setActiveLink] = useState(null);
 
@@ -61,6 +61,8 @@ const Sidebar = () => {
           Report
         </Link>
       </div>
+
+      <img src={myImage} className="lastimg" />
     </div>
   );
 };
