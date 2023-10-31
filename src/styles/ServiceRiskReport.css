@@ -209,6 +209,39 @@ input[type="checkbox"]:checked::before {
   text-align: center;
   color: #ee2528;
 }
+
+/* paggination  styles.css */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.pagination button.active {
+  background-color: #0056b3;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
 /* vioce  styles.css */
 
 .container {
@@ -222,7 +255,8 @@ input[type="checkbox"]:checked::before {
   width: 100%; /* Make the width 100% for responsiveness */
   max-width: 990px; /* Set a maximum width for large screens */
   height: 30px;
-  margin-top: 60px;
+  position: fixed;
+  top: 520px;
 }
 
 .image {
@@ -244,16 +278,20 @@ input[type="checkbox"]:checked::before {
 }
 
 .submit-button {
-  background-color: #ff4500; /* Orange background color */
-  color: white;
+  background-color: #fcfcfc; /* Orange background color */
+  color: rgb(240, 48, 48);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   margin-left: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth color transition */
+  transition: background-color 0.8s ease; /* Smooth color transition */
 }
 
 .submit-button:hover {
-  background-color: #fa5a5a; /* Darker orange on hover */
+  background-color: #f9f9f9; /* Darker orange on hover */
+  transition: background-color 0.8s ease;
+}
+.submit-button:active {
+  background-color: #ebebeb;
 }

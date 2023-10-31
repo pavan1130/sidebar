@@ -4,7 +4,11 @@ import "../styles/ServiceRiskReport.css"; // Import the CSS file
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import speach from "../image/speach.png";
-function ServiceRiskReport() {
+function ServiceRiskReport({ currentPage, totalPages, onPageChange }) {
+  const pageNumbers = [];
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredMedicineData, setFilteredMedicineData] = useState([]);
+
   const medicineData = [
     {
       name: "Concerta ER 54mg 24cnt 30s AUS",
@@ -173,7 +177,19 @@ function ServiceRiskReport() {
       additionalData: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     },
   ];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
+  const handleSearchSubmit = () => {
+    const filteredData = medicineData.filter((medicine) =>
+      medicine.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredMedicineData(filteredData);
+  };
   return (
     <>
       <div className="service-risk-report">
@@ -182,9 +198,17 @@ function ServiceRiskReport() {
           <FontAwesomeIcon icon={faFilter} className="icon" />
         </div>
         <div className="search">
-          <input type="text" placeholder="Search" class="search-input" />
+          <input
+            type="text"
+            placeholder="Search"
+            class="search-input"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
 
-          <button className="go-button">Go</button>
+          <button className="go-button" onClick={handleSearchSubmit}>
+            Go
+          </button>
         </div>
         <div className="dropdowns">
           <select className="dropdown">
@@ -217,7 +241,7 @@ function ServiceRiskReport() {
             </tr>
           </thead>
           <tbody>
-            {medicineData.map((medicine, index) => (
+            {filteredMedicineData.map((medicine, index) => (
               <tr
                 key={index}
                 className={index % 2 === 0 ? "white-row" : "light-grey-row"}
@@ -235,6 +259,30 @@ function ServiceRiskReport() {
           </tbody>
         </table>
       </div>
+      <div className="pagination">
+        <button
+          onClick={() => onPageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          &laquo;
+        </button>
+        {pageNumbers.map((page) => (
+          <button
+            key={page}
+            onClick={() => onPageChange(page)}
+            className={page === currentPage ? "active" : ""}
+          >
+            {page}
+          </button>
+        ))}
+        <button
+          onClick={() => onPageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
+          &raquo;
+        </button>
+      </div>
+
       <div className="container">
         <img className="image" src={speach} alt="An image" />
         <input className="input-field" type="text" placeholder="Your input" />
