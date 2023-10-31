@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Sidebar from './components/sidebar.jsx';
+import Dashboard from './components/dashboard.jsx';
+import ServiceRiskReport from './components/ServiceRiskReport.jsx';
+import Notifications from './components/Notifications.jsx';
+import Report from './components/Report.jsx';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Sidebar />
+        <Routes>
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/service-risk-report" component={ServiceRiskReport} />
+          <Route path="/notifications" component={Notifications} />
+          <Route path="/report" component={Report} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

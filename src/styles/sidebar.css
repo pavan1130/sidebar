@@ -1,0 +1,34 @@
+.sidebar {
+    width: 260px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #EE2528;
+    padding: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.profile-container {
+    margin-bottom: 100px; /* Add a 100px margin below the Profile component */
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 40px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+}
+.sidebar-links{
+    margin-left: 58px;
+}
+
+.sidebar-icon {
+    margin-right: 10px;
+}
