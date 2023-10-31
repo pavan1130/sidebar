@@ -1,15 +1,13 @@
-/* sidebar.css */
-
 .sidebar {
-  width: 170px;
-  height: 88vh;
+  width: 32vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   background-color: #ee2528;
   padding: 10px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  overflow: hidden; /* Hide overflow content for curved edges */
+  overflow: hidden;
 }
 
 .profile-container {
@@ -27,17 +25,18 @@
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0em;
-  transition: background-color 0.3s; /* Add a smooth transition for background color */
+  transition: background-color 0.3s;
 }
 
 .sidebar-link.active {
-  background-color: #fff; /* Change the background color for active links */
-  color: #ee2528; /* Change the text color for active links */
-  width: 170px; /* Adjust the width for active links */
-  padding: 10px; /* Adjust the padding for active links */
-  border-top-left-radius: 25px; /* Apply border radius to the left side */
-  border-bottom-left-radius: 25px; /* Apply border radius to the left side */
+  background-color: #fff;
+  color: #ee2528;
+  width: 170px;
+  padding: 10px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
+
 .sidebar-links {
   margin-left: 10px;
 }
@@ -47,7 +46,7 @@
 }
 
 .lastimg {
-  margin: 30px;
+  margin: 20px;
   width: 140px;
   height: 100px;
 }

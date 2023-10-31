@@ -1,6 +1,7 @@
 .profile-container {
   text-align: center;
   cursor: pointer;
+  margin-left: -40px;
 }
 
 .profile-image {
