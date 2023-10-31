@@ -1,20 +1,19 @@
 /* sidebar.css */
 
 .sidebar {
-  width: 190px;
+  width: 170px;
   height: 88vh;
   display: flex;
   flex-direction: column;
   background-color: #ee2528;
-  padding: 20px;
+  padding: 10px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-
   overflow: hidden; /* Hide overflow content for curved edges */
 }
 
 .profile-container {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .sidebar-link {
@@ -34,13 +33,13 @@
 .sidebar-link.active {
   background-color: #fff; /* Change the background color for active links */
   color: #ee2528; /* Change the text color for active links */
-  width: 200px; /* Adjust the width for active links */
-  padding: 15px; /* Adjust the padding for active links */
+  width: 170px; /* Adjust the width for active links */
+  padding: 10px; /* Adjust the padding for active links */
   border-top-left-radius: 25px; /* Apply border radius to the left side */
   border-bottom-left-radius: 25px; /* Apply border radius to the left side */
 }
 .sidebar-links {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .sidebar-icon {
