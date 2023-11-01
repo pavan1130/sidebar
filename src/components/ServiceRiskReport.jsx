@@ -7,7 +7,6 @@ import speach from "../image/speach.png";
 function ServiceRiskReport({ currentPage, totalPages, onPageChange }) {
   const pageNumbers = [];
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredMedicineData, setFilteredMedicineData] = useState([]);
 
   const medicineData = [
     {
@@ -184,12 +183,9 @@ function ServiceRiskReport({ currentPage, totalPages, onPageChange }) {
     setSearchQuery(e.target.value);
   };
 
-  const handleSearchSubmit = () => {
-    const filteredData = medicineData.filter((medicine) =>
-      medicine.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    setFilteredMedicineData(filteredData);
-  };
+  const filteredMedicineData = medicineData.filter((medicine) =>
+    medicine.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   return (
     <>
       <div className="service-risk-report">
@@ -206,9 +202,7 @@ function ServiceRiskReport({ currentPage, totalPages, onPageChange }) {
             onChange={handleSearchChange}
           />
 
-          <button className="go-button" onClick={handleSearchSubmit}>
-            Go
-          </button>
+          <button className="go-button">Go</button>
         </div>
         <div className="dropdowns">
           <select className="dropdown">
