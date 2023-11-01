@@ -4,42 +4,35 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .filters {
   display: flex;
   align-items: center;
-  margin-right: 10px;
+  width: 73px;
+  height: 28px;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #d0d5dd;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+  color: #344054;
+  cursor: pointer;
 }
 
 .search {
   display: flex;
   align-items: center;
-  margin-right: 10px;
   border-radius: 7px;
 }
 
 .search-input {
   width: 200px; /* Adjust the width as needed */
   padding: 6px;
-  border: 1px solid #ccc;
+  border: 0.5px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
   background-color: #f9f9f9;
   color: #333;
-}
-
-/* Add a hover effect */
-.search-input:hover {
-  border-color: #666;
-}
-
-/* Add focus styles for better user experience */
-.search-input:focus {
-  outline: none;
-  border-color: #92c6ff;
-  box-shadow: 0 0 5px #e92431;
 }
 
 .go-button {
@@ -225,6 +218,7 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
   background-color: white;
   border-color: #ee2528;
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 input[type="checkbox"]:checked::before {
@@ -232,6 +226,11 @@ input[type="checkbox"]:checked::before {
   display: block;
   text-align: center;
   color: #ee2528;
+}
+
+input[type="checkbox"]:checked:hover {
+  border-color: #ff0000;
+  box-shadow: 0 0 5px #ff0000;
 }
 
 .serviceRiskReport-container::-webkit-scrollbar {
