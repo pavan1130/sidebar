@@ -18,7 +18,7 @@ const Sidebar = () => {
   };
 
   const links = [
-    { to: "/dashboard", text: "Dashboard", icon: <FaChartLine /> },
+    { to: "/", text: "Dashboard", icon: <FaChartLine /> },
     {
       to: "/service-risk-report",
       text: "Service Risk Report",
@@ -41,8 +41,8 @@ const Sidebar = () => {
             }`}
             onClick={() => handleLinkClick(linkData.to)}
           >
-            {linkData.icon}
-            {linkData.text}
+            <span className="link-icon">{linkData.icon}</span>
+            <span className="link-text">{linkData.text}</span>
           </Link>
         ))}
       </div>

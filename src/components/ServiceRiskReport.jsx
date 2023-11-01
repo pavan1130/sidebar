@@ -4,10 +4,11 @@ import "../styles/ServiceRiskReport.css"; // Import the CSS file
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import speach from "../image/speach.png";
-function ServiceRiskReport({ currentPage, totalPages, onPageChange }) {
-  const pageNumbers = [];
-  const [searchQuery, setSearchQuery] = useState("");
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlineSwapRight } from "react-icons/ai";
 
+function ServiceRiskReport() {
+  const [searchQuery, setSearchQuery] = useState("");
   const medicineData = [
     {
       name: "Concerta ER 54mg 24cnt 30s AUS",
@@ -176,9 +177,7 @@ function ServiceRiskReport({ currentPage, totalPages, onPageChange }) {
       additionalData: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     },
   ];
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i);
-  }
+
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
@@ -205,20 +204,31 @@ function ServiceRiskReport({ currentPage, totalPages, onPageChange }) {
           <button className="go-button">Go</button>
         </div>
         <div className="dropdowns">
-          <select className="dropdown">
+          <select className="dropdown-a">
             <option value="AUS">AUS</option>
             <option value="AUS">ENG</option>
             <option value="AUS">IND</option>
           </select>
-          <select className="dropdown">
+          <select className="dropdown-b">
             <option value="Week">Week</option>
             <option value="Week">SUN</option>
             <option value="Week">MON</option>
           </select>
         </div>
         <div className="date-range">
-          <input type="date" value="2023-09-04" />
-          <input type="date" value="2023-12-05" />
+          <p>
+            2023-09-04{" "}
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                marginRight: "4px",
+              }}
+            >
+              <AiOutlineSwapRight />
+            </span>
+            2023-12-05
+          </p>
         </div>
         <button className="red-button">1 USD = 7 RMB</button>
       </div>
@@ -254,26 +264,30 @@ function ServiceRiskReport({ currentPage, totalPages, onPageChange }) {
         </table>
       </div>
       <div className="pagination">
-        <button
-          onClick={() => onPageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          &laquo;
-        </button>
-        {pageNumbers.map((page) => (
-          <button
-            key={page}
-            onClick={() => onPageChange(page)}
-            className={page === currentPage ? "active" : ""}
+        <button className="previous-btn">
+          <span
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              marginRight: "2px",
+            }}
           >
-            {page}
-          </button>
-        ))}
-        <button
-          onClick={() => onPageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-        >
-          &raquo;
+            <AiOutlineArrowLeft style={{ marginRight: "5px" }} />
+            Previous
+          </span>
+        </button>
+
+        <button className="next-btn">
+          <span
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              marginRight: "2px",
+            }}
+          >
+            <AiOutlineArrowRight style={{ marginRight: "5px" }} />
+            Next
+          </span>
         </button>
       </div>
 

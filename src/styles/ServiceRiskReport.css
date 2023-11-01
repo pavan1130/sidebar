@@ -39,7 +39,7 @@
 .search-input:focus {
   outline: none;
   border-color: #92c6ff;
-  box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+  box-shadow: 0 0 5px #e92431;
 }
 
 .go-button {
@@ -48,50 +48,69 @@
   border: none;
   border-radius: 7px;
   padding: 7px 17px;
+  height: 30px;
   cursor: pointer;
   margin-left: 20px;
+  font-family: Montserrat;
 }
 /* Style for .dropdowns and .date-range containers */
 .dropdowns,
 .date-range {
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+.dropdown-a {
   margin-right: 10px;
-  cursor: pointer;
-  border: 1px solid #ccc;
+  background: #ffeeee;
+  height: 30px;
+  width: 62px;
+  padding: 6px;
   border-radius: 5px;
-  padding: 5px;
-  background-color: #ffeeee;
+  border: none;
+  color: #e92431;
+  font-family: Montserrat;
 }
 
+.dropdown-b {
+  margin-right: 15px;
+  background: #ffeeee;
+  height: 30px;
+  width: 70px;
+  padding: 6px;
+  border-radius: 5px;
+  border: none;
+  color: #e92431;
+  font-family: Montserrat;
+}
 /* Style for individual .dropdown elements */
-.dropdown,
-.date-range input {
-  margin-right: 5px;
+.date-range p {
   cursor: pointer;
-  color: #ef4954;
-}
-
-/* Hover effect for the containers */
-.dropdowns:hover,
-.date-range:hover {
-  background-color: #ffebeb;
-}
-
-/* Focus effect for the containers */
-.dropdowns:focus-within,
-.date-range:focus-within {
-  border-color: #ffa1a8;
-  box-shadow: 0 0 5px #ffb7bc;
+  background: #ffeeee;
+  height: 20px;
+  width: 172px;
+  padding: 6px;
+  border-radius: 5px;
+  border: none;
+  color: #e92431;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
 }
 
 .red-button {
-  background-color: red;
+  background-color: #e92431;
   color: white;
   border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
+  width: 116px;
+  height: 30px;
+  padding: 12px, 16px, 12px, 16px;
+  border-radius: 8px;
+  border: none;
+  font-family: Montserrat;
 }
 
 .icon {
@@ -101,13 +120,17 @@
 /*------------------------------------* talbe */
 .serviceRiskReport-container {
   margin-top: 18px;
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
 }
 
 .serviceRiskReport-table {
-  border: 1px solid grey;
+  border: 1px solid #ffffff;
   border-collapse: collapse;
-  width: 1020px;
+  width: 120%;
   border-radius: 5px;
+  box-shadow: 0px -2px 2px 0px #1b1f250d;
 }
 
 .grey-heading-border {
@@ -121,24 +144,26 @@
   padding: 8px;
 }
 
-.bold-text {
-  font-size: medium;
-}
-
 .white-row {
   background-color: #f9fafb;
-  height: 20px;
 }
 
 .light-grey-row {
   background-color: #ffffff;
-  height: 20px;
+}
+
+/* Add a class to style the highlighted row */
+.white-row:hover,
+.light-grey-row:hover {
+  background-color: #f5f4f4;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.5s, box-shadow 0.5s;
 }
 
 .border {
   padding: 8px;
   font-family: Poppins;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0em;
   text-align: left;
@@ -183,19 +208,18 @@
 .serviceRiskReport-table tbody tr:nth-child(10) {
   color: #07da01;
 }
-
 input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border: 1px solid #ee2528;
   border-radius: 2px;
   outline: none;
   transition: background-color 0.3s, border-color 0.3s;
   margin-right: 10px;
-  cursor: pointer;
+  vertical-align: middle;
 }
 
 input[type="checkbox"]:checked {
@@ -210,6 +234,19 @@ input[type="checkbox"]:checked::before {
   color: #ee2528;
 }
 
+.serviceRiskReport-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.serviceRiskReport-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(89.65deg, #e92431 0.86%, #8c36f2 106.14%);
+  border-radius: 5px;
+}
+
+.serviceRiskReport-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
 /* paggination  styles.css */
 
 .pagination {
@@ -218,30 +255,32 @@ input[type="checkbox"]:checked::before {
   margin-top: 20px;
 }
 
-.pagination button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 12px;
-  margin: 0 5px;
+.previous-btn {
+  position: absolute;
+  left: 240px;
+  width: 95px;
+  height: 32px;
+
+  border-radius: 8px;
+  background: white;
+  border: 1px solid #d0d5dd;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+  color: #344054;
   cursor: pointer;
-  font-size: 16px;
 }
-
-.pagination button.active {
-  background-color: #0056b3;
+.next-btn {
+  position: absolute;
+  right: 20px;
+  width: 75px;
+  height: 28px;
+  padding: 8px, 14px, 8px, 14px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid #d0d5dd;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+  color: #344054;
+  cursor: pointer;
 }
-
-.pagination button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.pagination button:hover {
-  background-color: #0056b3;
-}
-
 /* vioce  styles.css */
 
 .container {

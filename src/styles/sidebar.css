@@ -31,18 +31,20 @@
 .sidebar-link.active {
   background-color: #fff;
   color: #ee2528;
-  width: 170px;
   padding: 10px;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
+  width: 200px;
+  border-top-left-radius: 29px; /* Add this line to round the top-left corner */
+  border-bottom-left-radius: 29px; /* Add this line to round the bottom-left corner */
+  border-top-right-radius: 10px; /* Reset the right-side radius to remove curve */
+  border-bottom-right-radius: 10px; /* Reset the right-side radius to remove curve */
 }
 
 .sidebar-links {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
-.sidebar-icon {
-  margin-right: 10px;
+.link-icon {
+  margin-right: 15px;
 }
 
 .lastimg {
